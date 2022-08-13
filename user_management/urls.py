@@ -11,7 +11,7 @@ from users.views import CustomLoginView, ResetPasswordView, ChangePasswordView
 
 from users.forms import LoginForm
 
-from profile_of_user.views import forum
+from profile_of_user.views import forum, discussion
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,7 +38,7 @@ urlpatterns = [
     url(r'^oauth/', include('social_django.urls', namespace='social')),
     path('forum/', include('profile_of_user.urls')),
     path('forum/forum', forum, name='forum'),
-    path("forum/discussion/<int:myid>/", views.discussion, name="Discussions"),
+    path("forum/discussion/<int:myid>/", discussion, name="Discussions"),
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
