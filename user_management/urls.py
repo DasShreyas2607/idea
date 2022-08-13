@@ -37,7 +37,8 @@ urlpatterns = [
 
     url(r'^oauth/', include('social_django.urls', namespace='social')),
     path('forum/', include('profile_of_user.urls')),
-    path('forum/', forum, name='forum'),
+    path('forum/forum', forum, name='forum'),
+    path("forum/discussion/<int:myid>/", views.discussion, name="Discussions"),
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
