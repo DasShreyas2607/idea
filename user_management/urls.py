@@ -36,7 +36,7 @@ urlpatterns = [
     path('password-change/', ChangePasswordView.as_view(), name='password_change'),
 
     url(r'^oauth/', include('social_django.urls', namespace='social')),
-
+    path('forum/', include('profile_of_user.urls')),
     path('forum/', forum, name='forum'),
     
 
