@@ -14,7 +14,8 @@ from pathlib import Path
 
 # To keep secret keys in environment variables
 from dotenv import load_dotenv
-
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -148,7 +149,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/staticfiles/'
+STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
